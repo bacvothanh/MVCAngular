@@ -2,17 +2,16 @@
     ViewData("Title") = "Contact"
 End Code
 
-<h2>@ViewData("Title").</h2>
-<h3>@ViewData("Message")</h3>
-
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+@section Scripts {
+    < script type = "text/javascript"
+    src = "~/Scripts/libs/runtime.js" > < /script>
+    <script type="text/javascript
+    " src="~/Scripts/libs / polyfills.js "></script>
+    <script type="
+    text / javascript " src="~/Scripts/libs / styles.js "></script>
+    <script type="
+    text / javascript " src="~/Scripts/libs / vendor.js "></script>
+    <script type="
+    text / javascript " src="~/Scripts/libs / main.js "></script>
+    }
+    <app-root></app-root>
