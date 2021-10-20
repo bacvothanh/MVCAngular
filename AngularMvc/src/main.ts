@@ -1,12 +1,24 @@
-import { enableProdMode } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { UpgradeModule } from '@angular/upgrade/static';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+@NgModule({
+    imports: [
+        BrowserModule,
+        UpgradeModule
+    ]
+})
 
-if (environment.production) {
-  enableProdMode();
+export class AppModule {
+    // Override Angular bootstrap so it doesn't do anything
+    ngDoBootstrap() {
+    }
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+// Bootstrap using the UpgradeModule
+platformBrowserDynamic().bootstrapModule(AppModule).then(platformRef => {
+    console.log("Bootstrapping in Hybrid mode with Angular & AngularJS");
+    const upgrade = platformRef.injector.get(UpgradeModule) as UpgradeModule;
+    upgrade.bootstrap(document.body, ['app']);
+});

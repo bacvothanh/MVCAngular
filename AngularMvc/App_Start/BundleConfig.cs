@@ -25,6 +25,12 @@ namespace AngularMvc
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            bundles.Add(new ScriptBundle("~/bundles/angular-scripts")
+                .Include("~/node_modules/zone.js/bundles/zone.umd.js",
+                    "~/Scripts/libs/runtime-es2017.*",
+                    "~/Scripts/libs/main-es2017.*",
+                    "~/Scripts/libs/polyfills-es2017.*"
+                ));
         }
     }
 }

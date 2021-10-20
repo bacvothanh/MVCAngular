@@ -17,6 +17,7 @@ import { AppComponent } from './app.component';
 export class AppModule {
     constructor(private upgrade: UpgradeModule) { }
     ngDoBootstrap() {
-        this.upgrade.bootstrap(document.body, ['appController'], { strictDi: true });
+        console.log("Bootstrapping in Hybrid mode with Angular & AngularJS");
+        this.upgrade.bootstrap(document.body, ['app'], { strictDi: true });
     }
 }

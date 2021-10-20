@@ -8,7 +8,8 @@ let AppModule = class AppModule {
         this.upgrade = upgrade;
     }
     ngDoBootstrap() {
-        this.upgrade.bootstrap(document.body, ['appController'], { strictDi: true });
+        console.log("Bootstrapping in Hybrid mode with Angular & AngularJS");
+        this.upgrade.bootstrap(document.body, ['app'], { strictDi: true });
     }
 };
 AppModule = __decorate([
