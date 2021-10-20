@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { UpgradeModule } from '@angular/upgrade/static';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppComponent } from './app/app.component';
 let AppModule = class AppModule {
     // Override Angular bootstrap so it doesn't do anything
     ngDoBootstrap() {
@@ -10,10 +11,15 @@ let AppModule = class AppModule {
 };
 AppModule = __decorate([
     NgModule({
+        declarations: [
+            AppComponent
+        ],
         imports: [
             BrowserModule,
             UpgradeModule
-        ]
+        ],
+        providers: [],
+        bootstrap: [AppComponent]
     })
 ], AppModule);
 export { AppModule };
